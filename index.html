@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Record Keeping</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Record Keeping</h1>
+    </header>
+    
+    <main>
+        <div id = "insert">
+        <h2>Add new Student</h2>
+        
+            <input type="text" name="stud_id" id = "stud_id" placeholder = "Student-Id" />
+            <input type="text" name="first_name" id = "first_name" placeholder = "First Name" />
+            <input type="text" name="last_name" id = "last_name" placeholder = "Last Name" />
+            <input type="text" name="courses" id = "courses" placeholder = "Courses" />
+            <input type="text" name="email" id = "email" placeholder = "Email" />
+            
+            <button id="btn-add" onclick = "create()">Add</button>
+            
+        </div>
+        
+        <h2>Records</h2>
+        
+        <div id = "reader" onload = "read()"></div>
+        
+        
+        <div id = "updater"></div>
+    </main>
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCK5GDNS6WUS0kU83J-YVKJpQOvHvF3EEo",
+        authDomain: "recordkeeping-a439c.firebaseapp.com",
+        databaseURL: "https://recordkeeping-a439c.firebaseio.com",
+        projectId: "recordkeeping-a439c",
+        storageBucket: "recordkeeping-a439c.appspot.com",
+        messagingSenderId: "117098413016"
+      };
+     
+      firebase.initializeApp(config);  /*  global firebase*/
+    </script>
+    
+    
+    <script type="text/javascript" src="create.js"></script>
+    <script type="text/javascript" src="read.js"></script>
+    <script type="text/javascript" src="delete.js"></script>
+    <script type="text/javascript" src="update.js"></script>
+    
+    <script type="text/javascript">
+        read();
+    </script>
+    
+</body>
+</html>
